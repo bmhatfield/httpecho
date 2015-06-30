@@ -53,6 +53,6 @@ func main() {
 	http.HandleFunc("/code/", HttpResponseCodeHandler)
 	http.HandleFunc("/", RequestDumpHandler)
 
-	fmt.Printf("httpecho starting up on %s:%s...", *addr, *port)
+	fmt.Printf("httpecho starting up on %s:%s...\n", *addr, *port)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf("%s:%s", *addr, *port), nil))
 }
