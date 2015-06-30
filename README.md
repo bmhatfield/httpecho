@@ -6,7 +6,7 @@ This is a small utility for debugging HTTP interactions by printing information 
 
 ## Features
 - Respond to any request, with any method, and dump the full contents of the request, including headers and body, using `httputil.DumpRequest()`, and then return a 200.
-- Force a response code to requests (any method) on the path /code/{DESIRED_RESPONSE_CODE}. This is useful for testing API clients, load balancers, or proxies.
+- Force a response code to requests (any method) on the path `/code/{DESIRED_RESPONSE_CODE}` (eg `curl -i localhost:8080/code/401`). This is useful for testing API clients, load balancers, or proxies.
 
 ## Further documentation
 - It's a short utility, so don't be afraid to peek at the code.
