@@ -45,13 +45,14 @@ func HttpResponseCodeHandler(resp http.ResponseWriter, req *http.Request) {
 }
 
 func main() {
-	port := flag.String("port", "8080", "the local port to bind to")
 	addr := flag.String("address", "", "the address to bind to. Default is 0.0.0.0")
+	port := flag.String("port", "8080", "the local port to bind to")
 
 	flag.Parse()
 
 	http.HandleFunc("/code/", HttpResponseCodeHandler)
 	http.HandleFunc("/", RequestDumpHandler)
 
+	fmt.Printf("httpecho starting up on %s:%s...", *addr, *port)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf("%s:%s", *addr, *port), nil))
 }
